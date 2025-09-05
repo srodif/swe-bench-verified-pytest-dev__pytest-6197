@@ -6,7 +6,7 @@ def test_init_py_regression_default_patterns(testdir):
     This is a regression test for pytest 5.2.3 where random __init__.py files
     were being collected even when they don't match python_files patterns.
     """
-    # Create a non-test package with an __init__.py that would fail if imported
+    # Create a non-test package with an __init__.py that would fail if imported.
     non_test_pkg = testdir.mkdir("non_test_package")
     non_test_pkg.ensure("__init__.py").write("assert False, 'This should not be collected'")
     
